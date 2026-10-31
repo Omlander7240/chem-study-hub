@@ -54,20 +54,21 @@ state** in the same change — a stale list is worse than none.
 
 ### Current state — 2026-10-31
 
-Static site, no backend. The rename to Learnmaxxing is done in the working tree
-but **uncommitted** (`git status` shows `index.html`, `app.js`, `README.md`,
-`CHANGELOG.md` modified, `AGENTS.md` untracked); branch
-`freebuff/50b973c5dac19b8790da0db4`, last commit `4be098c`. Free study features
-work. Nothing is paid yet, and there is no server to pay from.
+Static site, no backend. The rename to Learnmaxxing is **committed** as
+`93da563` and pushed to the fork `Omlander7240/chem-study-hub` (branch `main`
+and `learnmaxxing-rename`). `OmanshYT/Learnmaxxing` is still at `4be098c`: the
+signed-in account has read-only access there, so upstream needs a pull
+request. Free study features work. Nothing is paid yet, and there is no server
+to pay from.
 
 ### To-do
 
 `[ ]` open · `[~]` started (say where) · `[x]` done (with date). Mark items
 done, never delete them; the record is how the next chat knows what happened.
 
-- [ ] **Commit the rename.** `index.html`, `app.js`, `README.md`,
-  `CHANGELOG.md` and `AGENTS.md` exist only on this branch — a fresh clone or
-  another machine still says "Chem Study Hub".
+- [x] **Commit the rename.** Done 2026-10-31 as `93da563`, pushed to the fork
+  (`main` + `learnmaxxing-rename`). Still open: a PR into
+  `OmanshYT/Learnmaxxing`, which this account cannot push to directly.
 - [ ] **Pick the backend and write it down here.** Host, database, auth,
   payments. Required before any AI or billing work: static GitHub Pages cannot
   hold a key or check entitlement.
