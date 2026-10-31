@@ -5,6 +5,26 @@ Read automatically at the start of every chat in this repo (same mechanism as
 Web, CLI and Cloud. Keep it short and specific: checkable rules get followed,
 vague preferences get ignored.
 
+## Output style
+
+Keep chat replies short — this is a standing preference for every chat. Lead
+with the result, then bullets. No restating the request, no walkthroughs of
+steps that are already visible, no recapping what the user can read in a diff.
+Long-form sections only when the user asks for a report.
+
+## Commits and pushes
+
+- **Commit and push every change automatically.** Do not leave work sitting
+  uncommitted waiting to be asked: finish the edit, commit it with a message
+  that says why, and push to the remote the same turn.
+- **Still write the `CHANGELOG.md` entry** for anything user-visible (see
+  Rules) *before* committing. That entry is the human-readable undo path, so
+  an automatic commit can always be rolled back deliberately — `git log`
+  alone does not explain how.
+- **Never force-push and never rewrite history** to make a push succeed. If a
+  push is rejected (diverged branch, no write access), stop and say so plainly
+  instead of working around it.
+
 ## Vision
 
 **Learnmaxxing** — a website that helps students study, with AI help. People
