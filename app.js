@@ -2,7 +2,8 @@
 (() => {
   const D = window.STUDY_DATA;
   const DAY = 864e5;
-  const KEY = "chem-study-hub.v1";
+  const KEY = "learnmaxxing.v1";
+  const LEGACY_KEY = "chem-study-hub.v1"; // saves made before the rename
   const app = document.getElementById("app");
   const $ = (sel, root = document) => root.querySelector(sel);
   const pad = (n) => String(n).padStart(2, "0");
@@ -12,7 +13,7 @@
   /* ---------- storage (every access guarded: private mode can throw) ---------- */
   let S = { q: {}, cards: {}, log: [], sched: {}, settings: {}, ui: null };
   try {
-    S = { ...S, ...JSON.parse(localStorage.getItem(KEY) || "{}") };
+    S = { ...S, ...JSON.parse(localStorage.getItem(KEY) || localStorage.getItem(LEGACY_KEY) || "{}") };
   } catch (e) {
     /* storage blocked or corrupt: start fresh */
   }
@@ -21,6 +22,7 @@
   function save() {
     try {
       localStorage.setItem(KEY, JSON.stringify(S));
+      try { localStorage.removeItem(LEGACY_KEY); } catch (e) { /* already gone */ }
     } catch (e) {
       toast("Progress could not be saved in this browser.");
     }

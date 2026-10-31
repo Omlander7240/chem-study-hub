@@ -1,4 +1,4 @@
-# Chem Study Hub
+# Learnmaxxing
 
 Static site built from the Studying Vault (Chemistry, CHEM 159). No server, no npm. Open `index.html` in a browser.
 

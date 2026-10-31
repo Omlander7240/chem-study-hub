@@ -1,6 +1,6 @@
 # Change log
 
-Every change to the Chem Study Hub, newest first, with the reasoning and the
+Every change to Learnmaxxing, newest first, with the reasoning and the
 way back. `git log --oneline` is the machine-readable version; this file says
 why each piece exists and how to undo it.
 
@@ -15,8 +15,23 @@ why each piece exists and how to undo it.
 | Reset only colours, fonts, tab order | In the app: **Look & layout → Reset look & layout** |
 
 Uploads, study progress and layout choices live in the browser, not in Git.
-They are stored under the key `chem-study-hub.v1`; clearing site data wipes
-them, and **Stats → Export** backs up the study progress.
+They are stored under the key `learnmaxxing.v1`; saves made under the old
+`chem-study-hub.v1` key are read once and moved over on the next save. Clearing
+site data wipes them, and **Stats → Export** backs up the study progress.
+
+## 2026-10-31 — renamed to Learnmaxxing
+
+`index.html`, `app.js`, `README.md`. Revert with `git checkout -- index.html app.js README.md`.
+
+Browsers were not the only place the old name lived: the page title, the brand
+lockup in the top bar, the README and the storage key all said "Chem Study Hub".
+The title and brand now read Learnmaxxing, and the lockup uses an **LM**
+monogram instead of the chemistry flask, since the site is not chemistry-only.
+
+The storage key moved to `learnmaxxing.v1`. `app.js` still reads
+`chem-study-hub.v1` when the new key is empty and deletes it after the first
+successful save, so existing progress, uploads and look & layout choices
+survive the rename instead of vanishing.
 
 ## 2026-10-31 — long quiz answers wrap
 
